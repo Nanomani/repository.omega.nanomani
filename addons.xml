@@ -122,43 +122,44 @@
       </assets>
     </extension>
   </addon>
-  <!-- <addon id="repository.silvo" name="SiLVO Development Repository" version="1.0.0" provider-name="SiLVO"> -->
-    <!-- <extension point="xbmc.addon.repository" name="SiLVO Dev Repo"> -->
-      <!-- <dir minversion="21.0.0"> -->
-        <!-- <info compressed="false">https://raw.githubusercontent.com/MikeSiLVO/repository.silvo/main/piers/addons.xml</info> -->
-        <!-- <checksum>https://raw.githubusercontent.com/MikeSiLVO/repository.silvo/main/piers/addons.xml.md5</checksum> -->
-        <!-- <datadir zip="true">https://raw.githubusercontent.com/MikeSiLVO/repository.silvo/main/piers/</datadir> -->
-      <!-- </dir> -->
-    <!-- </extension> -->
-    <!-- <extension point="xbmc.addon.metadata"> -->
-      <!-- <summary lang="en_GB">SiLVO Development Repository</summary> -->
-      <!-- <description lang="en_GB">Development and pre-release repository for Aeon Nox: SiLVO skin and related addons. Contains beta versions for testing before official Kodi repo releases.</description> -->
-      <!-- <disclaimer lang="en_GB">Pre-release software may contain bugs. Use at your own risk. Stable versions are available in the official Kodi repository.</disclaimer> -->
-      <!-- <platform>all</platform> -->
-      <!-- <assets> -->
-        <!-- <icon>icon.png</icon> -->
-        <!-- <fanart>fanart.jpg</fanart> -->
-      <!-- </assets> -->
-    <!-- </extension> -->
-  <!-- </addon> -->
-  <!-- <addon id="repository.nanomani" name="Nanomani Repository" version="1.0" provider-name="nanomani"> -->
-    <!-- <extension point="xbmc.addon.repository" name="Nanomani Repository"> -->
-      <!-- <dir minversion="21.9.1"> -->
-        <!-- <info compressed="false">https://github.com/Nanomani/repository.nanomani/raw/main/addons.xml</info> -->
-        <!-- <checksum>https://github.com/Nanomani/repository.nanomani/raw/main/addons.xml.md5</checksum> -->
-        <!-- <datadir zip="true">https://github.com/Nanomani/repository.nanomani/raw/main/</datadir> -->
-      <!-- </dir> -->
-    <!-- </extension> -->
-    <!-- <extension point="xbmc.addon.metadata"> -->
-      <!-- <summary>Nanomani Repository</summary> -->
-      <!-- <description>A repository for releases of nanomani's skins.</description> -->
-      <!-- <disclaimer></disclaimer> -->
-      <!-- <platform>all</platform> -->
-      <!-- <assets> -->
-        <!-- <icon>icon.png</icon> -->
-      <!-- </assets> -->
-    <!-- </extension> -->
-  <!-- </addon> -->
+  <addon id="script.skin.info.service"
+	   name="Skin Info Service"
+	   version="2.0.0~beta39"
+	   provider-name="MikeSiLVO">
+	<requires>
+		<import addon="xbmc.python" version="3.0.1" />
+		<import addon="xbmc.json" version="13.5.0" />
+		<import addon="script.module.pil" version="1.1.7" />
+		<import addon="script.module.requests" version="2.31.0" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.python.library" library="script.py" />
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py">
+				<label>$ADDON[script.skin.info.service 32102]</label>
+				<visible>!String.IsEmpty(ListItem.DBID) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)]</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<license>GPL-3.0-only</license>
+		<source>https://github.com/MikeSiLVO/script.skin.info.service</source>
+		<forum>https://forum.kodi.tv/showthread.php?tid=384016</forum>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<summary lang="en_GB">Provides rich media info and artwork to skins.</summary>
+		<summary lang="fr_FR">Fournit aux habillages des informations enrichies sur les médias ainsi que leurs visuels.</summary>
+		<description lang="en_GB">Skin Info Service provides skins with rich metadata and artwork beyond what Kodi exposes by default. It adds extra properties such as ratings from multiple sources, artwork, stream details, and cast and plot information for movies, TV shows, episodes, sets, music videos, artists, and albums, drawing on both your library and online data. It also includes a tool to find and add animated GIF posters to your library.</description>
+		<description lang="fr_FR">Skin Info Service fournit des informations supplémentaires telles que les notes, les illustrations et les détails de flux pour les films, les séries, les sagas, les artistes et les albums. Comprend un outil de recherche d&apos;affiches GIF pour trouver et ajouter automatiquement des affiches GIF animées à votre médiathèque.</description>
+	</extension>
+  </addon>
   <addon id="plugin.audio.apple.podcasts" name="Apple Podcasts" version="1.2.1" provider-name="Tristan Fischer, nanomani">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
