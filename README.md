@@ -1,4 +1,6 @@
-## repository.nanomani
+## Nanomani Repository  
+
+repository for nanomani addons and skins for Kodi Omega (v21)
 
 #### 👉 Download & install in Kodi Add-on repository : **[repository.nanomani-0.9.zip](https://github.com/Nanomani/repository.omega.nanomani/releases/download/v0.9/repository.nanomani-0.9.zip)**  
 
