@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addons>
-  <addon id="skin.arctic.zephyr.rounded" version="1.2.22" name="Arctic: Zephyr - Rounded" provider-name="jurialmunkey, beatmasterrs, nanomani">
+  <addon id="skin.arctic.zephyr.rounded" version="1.2.23" name="Arctic: Zephyr - Rounded" provider-name="jurialmunkey, beatmasterrs, nanomani">
     <requires>
-      <import addon="xbmc.gui" version="5.17.0"/>
-      <import addon="script.skinshortcuts" version="0.4.0"/>
+      <import addon="xbmc.gui" version="5.17.0" />
+      <import addon="script.skinshortcuts" version="0.4.0" />
       <import addon="script.skinvariables" version="2.1.9" />
       <import addon="plugin.video.themoviedb.helper" version="5.2.17~nexus" />
       <import addon="script.wikipedia" version="0.0.5" />
-      <import addon="script.artistslideshow" version="3.3.5"/>
-      <import addon="script.globalsearch" version="3.0.0"/>
-      <import addon="script.image.resource.select" version="0.0.5"/>
+      <import addon="script.artistslideshow" version="3.3.5" />
+      <import addon="script.globalsearch" version="3.0.0" />
+      <import addon="script.image.resource.select" version="0.0.5" />
       <import addon="resource.images.recordlabels.white" version="0.0.1" />
       <import addon="resource.images.studios.coloured" version="0.0.1" />
       <import addon="resource.images.moviecountryicons.flags" version="0.0.1" />
-      <import addon="resource.images.weathericons.white" version="0.0.6"/>
-      <import addon="resource.images.weatherfanart.single" version="0.0.6"/>
+      <import addon="resource.images.weathericons.white" version="0.0.6" />
+      <import addon="resource.images.weatherfanart.single" version="0.0.6" />
     </requires>
     <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" debugging="false" effectslowdown="1">
       <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
@@ -122,43 +122,40 @@
       </assets>
     </extension>
   </addon>
-  <addon id="script.skin.info.service"
-	   name="Skin Info Service"
-	   version="2.0.0~beta39"
-	   provider-name="MikeSiLVO">
-	<requires>
-		<import addon="xbmc.python" version="3.0.1" />
-		<import addon="xbmc.json" version="13.5.0" />
-		<import addon="script.module.pil" version="1.1.7" />
-		<import addon="script.module.requests" version="2.31.0" />
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="plugin.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.python.library" library="script.py" />
-	<extension point="xbmc.service" library="service.py" />
-	<extension point="kodi.context.item">
-		<menu id="kodi.core.main">
-			<item library="context.py">
-				<label>$ADDON[script.skin.info.service 32102]</label>
-				<visible>!String.IsEmpty(ListItem.DBID) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)]</visible>
-			</item>
-		</menu>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<license>GPL-3.0-only</license>
-		<source>https://github.com/MikeSiLVO/script.skin.info.service</source>
-		<forum>https://forum.kodi.tv/showthread.php?tid=384016</forum>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<summary lang="en_GB">Provides rich media info and artwork to skins.</summary>
-		<summary lang="fr_FR">Fournit aux habillages des informations enrichies sur les médias ainsi que leurs visuels.</summary>
-		<description lang="en_GB">Skin Info Service provides skins with rich metadata and artwork beyond what Kodi exposes by default. It adds extra properties such as ratings from multiple sources, artwork, stream details, and cast and plot information for movies, TV shows, episodes, sets, music videos, artists, and albums, drawing on both your library and online data. It also includes a tool to find and add animated GIF posters to your library.</description>
-		<description lang="fr_FR">Skin Info Service fournit des informations supplémentaires telles que les notes, les illustrations et les détails de flux pour les films, les séries, les sagas, les artistes et les albums. Comprend un outil de recherche d&apos;affiches GIF pour trouver et ajouter automatiquement des affiches GIF animées à votre médiathèque.</description>
-	</extension>
+  <addon id="script.skin.info.service" name="Skin Info Service" version="2.0.0~beta39" provider-name="MikeSiLVO">
+    <requires>
+      <import addon="xbmc.python" version="3.0.1" />
+      <import addon="xbmc.json" version="13.5.0" />
+      <import addon="script.module.pil" version="1.1.7" />
+      <import addon="script.module.requests" version="2.31.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.library" library="script.py" />
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="kodi.context.item">
+      <menu id="kodi.core.main">
+        <item library="context.py">
+          <label>$ADDON[script.skin.info.service 32102]</label>
+          <visible>!String.IsEmpty(ListItem.DBID) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)]</visible>
+        </item>
+      </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <license>GPL-3.0-only</license>
+      <source>https://github.com/MikeSiLVO/script.skin.info.service</source>
+      <forum>https://forum.kodi.tv/showthread.php?tid=384016</forum>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+      </assets>
+      <summary lang="en_GB">Provides rich media info and artwork to skins.</summary>
+      <summary lang="fr_FR">Fournit aux habillages des informations enrichies sur les médias ainsi que leurs visuels.</summary>
+      <description lang="en_GB">Skin Info Service provides skins with rich metadata and artwork beyond what Kodi exposes by default. It adds extra properties such as ratings from multiple sources, artwork, stream details, and cast and plot information for movies, TV shows, episodes, sets, music videos, artists, and albums, drawing on both your library and online data. It also includes a tool to find and add animated GIF posters to your library.</description>
+      <description lang="fr_FR">Skin Info Service fournit des informations supplémentaires telles que les notes, les illustrations et les détails de flux pour les films, les séries, les sagas, les artistes et les albums. Comprend un outil de recherche d'affiches GIF pour trouver et ajouter automatiquement des affiches GIF animées à votre médiathèque.</description>
+    </extension>
   </addon>
   <addon id="plugin.audio.apple.podcasts" name="Apple Podcasts" version="1.2.1" provider-name="Tristan Fischer, nanomani">
     <requires>
