@@ -122,7 +122,7 @@
       </assets>
     </extension>
   </addon>
-  <addon id="script.skin.info.service" name="Skin Info Service" version="2.0.0~beta39" provider-name="MikeSiLVO">
+  <addon id="script.skin.info.service" name="Skin Info Service" version="2.0.0~beta42" provider-name="MikeSiLVO">
     <requires>
       <import addon="xbmc.python" version="3.0.1" />
       <import addon="xbmc.json" version="13.5.0" />
